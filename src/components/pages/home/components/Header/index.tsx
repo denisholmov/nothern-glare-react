@@ -8,9 +8,11 @@ export const Header = () => {
 
         <div className={styles.information}>
           <ul className={styles.list}>
-            <li>Работаем с 9:00 до 22:00</li>
-            <li>+7 (999) 999-99-99</li>
-            <li>severnyblik@mail.ru</li>
+            <li className={`${styles.item} ${styles.itemSteel}`}>
+              Работаем с 9:00 до 22:00
+            </li>
+            <li className={styles.item}>+7 (999) 581-98-22</li>
+            <li className={styles.item}>severnyblik@mail.ru</li>
           </ul>
 
           <button className={styles.btn}>Расчитать стоимость</button>
