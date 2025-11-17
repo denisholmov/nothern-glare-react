@@ -1,6 +1,8 @@
+import type { FC } from "react";
+
 import styles from "./styles/index.module.css";
 
-export const Header = () => {
+export const Header: FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>

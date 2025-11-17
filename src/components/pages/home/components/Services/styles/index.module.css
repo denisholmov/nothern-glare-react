@@ -1,7 +1,26 @@
 .container {
   display: flex;
+  flex-direction: column;
+  gap: 26px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 1685px;
+  padding-top: 14px;
+  padding-bottom: 14px;
   margin: 0 auto;
+  background-color: var(--color-polar-bear-blizzard);
+  border-radius: 21px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-lead);
+}
+
+@media (width <= 440px) {
+  .container {
+    gap: 19px;
+    max-width: 383px;
+  }
 }
