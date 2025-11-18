@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import { Process } from "./components/Process";
 import { Services } from "./components/Services";
 import styles from "./styles/index.module.css";
 
@@ -9,6 +10,7 @@ export const HomePage = () => {
 
       <main className={styles.main}>
         <Services />
+        <Process />
       </main>
     </div>
   );
