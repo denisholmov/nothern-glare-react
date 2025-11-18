@@ -1,6 +1,8 @@
+import type { FC } from "react";
+
 import styles from "./styles/index.module.css";
 
-export const ProfMasterIcon = () => (
+export const ProfMasterIcon: FC = () => (
   <svg
     viewBox="0 0 43 43"
     fill="none"
