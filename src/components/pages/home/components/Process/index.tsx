@@ -1,6 +1,8 @@
+import type { FC } from "react";
+
 import styles from "./styles/index.module.css";
 
-export const Process = () => {
+export const Process: FC = () => {
   return (
     <section className={styles.process}>
       <div className={styles.container}>

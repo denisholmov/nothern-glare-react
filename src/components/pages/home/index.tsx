@@ -1,3 +1,4 @@
+import { Advantages } from "./components/Advantages";
 import { Header } from "./components/Header";
 import { Process } from "./components/Process";
 import { Services } from "./components/Services";
@@ -11,6 +12,7 @@ export const HomePage = () => {
       <main className={styles.main}>
         <Services />
         <Process />
+        <Advantages />
       </main>
     </div>
   );
