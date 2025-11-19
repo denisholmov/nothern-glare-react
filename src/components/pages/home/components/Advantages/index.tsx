@@ -16,7 +16,7 @@ export const Advantages: FC = () => {
               </div>
               <div className={styles.content}>
                 <h3 className={styles.contentTitle}>{item.title}</h3>
-                <p>{item.text}</p>
+                <p className={styles.text}>{item.text}</p>
               </div>
             </li>
           ))}
