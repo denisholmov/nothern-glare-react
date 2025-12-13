@@ -1,8 +1,10 @@
 import type { FC } from "react";
 
+import type { HeaderProps } from "./types";
+
 import styles from "./styles/index.module.css";
 
-export const Header: FC = () => {
+export const Header: FC<HeaderProps> = ({ onOpenModal }) => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -17,7 +19,9 @@ export const Header: FC = () => {
             <li className={styles.item}>severnyblik@mail.ru</li>
           </ul>
 
-          <button className={styles.btn}>Расчитать стоимость</button>
+          <button className={styles.btn} onClick={onOpenModal}>
+            Расчитать стоимость
+          </button>
         </div>
       </div>
     </header>
