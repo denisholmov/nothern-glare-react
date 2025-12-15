@@ -1,4 +1,4 @@
-import emailjs from "@emailjs/browser";
+// CallModal/index.tsx
 import React from "react";
 import { createPortal } from "react-dom";
 
@@ -6,44 +6,37 @@ import { CallModalUI } from "@/components/ui/CallModalUi";
 
 import type { CallModalProps } from "./types";
 
+import { sendCallRequest } from "./api/sendCallRequest";
+
 export const CallModal = ({ isOpen, setIsOpen }: CallModalProps) => {
+  const [isLoading, setIsLoading] = React.useState(false);
+
   const handleClose = () => setIsOpen(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
 
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const phone = formData.get("phone") as string;
-
-    const templateParams = {
-      from_name: name,
-      phone_number: phone,
-    };
-
-    emailjs
-      .send(
-        "service_wg0lmmu", // Service ID
-        "template_i9i18ae", // Template ID
-        templateParams,
-        "SL_s35RSIgD2svZIX", // Public Key
-      )
-      .then(
-        (response) => {
-          console.log("Письмо отправлено!", response.status, response.text);
-        },
-        (err) => {
-          console.error("Ошибка при отправке:", err);
-        },
+    try {
+      await sendCallRequest(e.currentTarget);
+      handleClose();
+    } catch (err) {
+      alert(
+        `${JSON.stringify(err)}! Ведутся технические работы. Можете связаться с нами по указанному на сайте телефону!`,
       );
-
-    handleClose();
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (!isOpen) return null;
 
   return createPortal(
-    <CallModalUI onSubmit={handleSubmit} onClose={handleClose} />,
+    <CallModalUI
+      onSubmit={handleSubmit}
+      onClose={handleClose}
+      isLoading={isLoading}
+    />,
     document.body,
   );
 };

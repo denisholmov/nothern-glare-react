@@ -4,7 +4,11 @@ import type { CallModalUIProps } from "./types";
 
 import styles from "./styles/index.module.css";
 
-export const CallModalUI = ({ onSubmit, onClose }: CallModalUIProps) => {
+export const CallModalUI = ({
+  onSubmit,
+  onClose,
+  isLoading,
+}: CallModalUIProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,8 +52,12 @@ export const CallModalUI = ({ onSubmit, onClose }: CallModalUIProps) => {
             <input type="checkbox" name="policy" defaultChecked required />
             <span>Нажимая на кнопку, вы даете согласие на </span>
           </label>
-          <button type="submit" className={styles.callModalButton}>
-            Позвоните мне
+          <button
+            type="submit"
+            className={styles.callModalButton}
+            disabled={isLoading}
+          >
+            {isLoading ? "Отправка..." : "Позвоните мне"}
           </button>
         </form>
       </div>
