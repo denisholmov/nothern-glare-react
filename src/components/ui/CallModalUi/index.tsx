@@ -39,18 +39,20 @@ export const CallModalUI = ({
             name="name"
             placeholder="Имя"
             type="text"
-            required
           />
           <input
             className={styles.callModalInput}
             name="phone"
-            placeholder="Телефон"
+            placeholder="+7(999)123-45-67"
             type="tel"
             required
           />
           <label className={styles.callModalPolicy}>
             <input type="checkbox" name="policy" defaultChecked required />
-            <span>Нажимая на кнопку, вы даете согласие на </span>
+            <span>
+              Нажимая на кнопку, вы даете согласие на обработку персональных
+              данных
+            </span>
           </label>
           <button
             type="submit"

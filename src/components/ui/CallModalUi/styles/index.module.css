@@ -44,7 +44,7 @@
 .callModalPolicy {
   display: flex;
   gap: 10px;
-  align-items: flex-start;
+  align-items: center;
   margin: 20px 0 32px;
   font-size: 13px;
   color: var(--color-lead);
