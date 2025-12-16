@@ -1,0 +1,72 @@
+.callModalOverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(0 0 0 / 60%);
+}
+
+.callModal {
+  width: 100%;
+  max-width: 520px;
+  padding: 48px 40px;
+  text-align: center;
+  background: var(--color-white);
+  border-radius: 24px;
+}
+
+.callModalTitle {
+  margin-bottom: 32px;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--clear-chill);
+}
+
+.callModalInput {
+  width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: var(--color-lead);
+  outline: none;
+  background: var(--color-white);
+  border: 2px solid var(--clear-chill);
+  border-radius: 14px;
+}
+
+.callModalInput::placeholder {
+  color: var(--color-dim-gray);
+}
+
+.callModalPolicy {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0 32px;
+  font-size: 13px;
+  color: var(--color-lead);
+  text-align: left;
+}
+
+.callModalPolicy input {
+  margin-top: 2px;
+}
+
+.callModalPolicy a {
+  color: var(--clear-chill);
+  text-decoration: underline;
+}
+
+.callModalButton {
+  height: 56px;
+  padding: 0 32px;
+  font-size: 18px;
+  color: var(--color-white);
+  cursor: pointer;
+  background: var(--clear-chill);
+  border: none;
+  border-radius: 14px;
+}

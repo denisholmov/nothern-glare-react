@@ -5,6 +5,7 @@ import { Services } from "./components/Services";
 import styles from "./styles/index.module.css";
 
 export const HomePage = () => {
+
   return (
     <div className={styles.wrapper}>
       <Header />
