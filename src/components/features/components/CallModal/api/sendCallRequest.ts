@@ -1,14 +1,13 @@
 import emailjs from "@emailjs/browser";
 
-import { EMAILJS } from "../constants/emailjs.ts";
-import { getFormValues } from "../utils/getFormValues.ts";
+import type { CallRequestFormValues } from "../types";
 
-export const sendCallRequest = async (form: HTMLFormElement) => {
-  const formData = getFormValues(form);
+import { EMAILJS } from "../constants/emailjs";
 
+export const sendCallRequest = async (data: CallRequestFormValues) => {
   const templateParams = {
-    from_name: formData.name,
-    phone_number: formData.phone,
+    from_name: data.name,
+    phone_number: data.phone,
   };
 
   return emailjs.send(

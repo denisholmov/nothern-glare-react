@@ -4,9 +4,11 @@ import { createPortal } from "react-dom";
 
 import { CallModalUI } from "@/components/ui/CallModalUi";
 
-import type { CallModalProps } from "./types";
+import type { CallModalProps, CallRequestFormValues } from "./types";
 
 import { sendCallRequest } from "./api/sendCallRequest";
+import { callRequestSchema } from "./constants/validationSchema";
+import { getCallRequestFormValues } from "./utils/getCallRequestFormValues";
 
 export const CallModal = ({ isOpen, setIsOpen }: CallModalProps) => {
   const [isLoading, setIsLoading] = React.useState(false);
@@ -18,11 +20,26 @@ export const CallModal = ({ isOpen, setIsOpen }: CallModalProps) => {
     setIsLoading(true);
 
     try {
-      await sendCallRequest(e.currentTarget);
+      const values: CallRequestFormValues = getCallRequestFormValues(
+        e.currentTarget,
+      );
+
+      await callRequestSchema.validate(values, {
+        abortEarly: false,
+      });
+
+      await sendCallRequest(values);
+
       handleClose();
-    } catch (err) {
+    } catch (err: unknown) {
+      if (err instanceof Error && err.name === "ValidationError") {
+        const yupError = err as import("yup").ValidationError;
+        alert(yupError.errors.join("\n"));
+        return;
+      }
+
       alert(
-        `${JSON.stringify(err)}! Ведутся технические работы. Можете связаться с нами по указанному на сайте телефону!`,
+        "Ведутся технические работы. Можете связаться с нами по указанному на сайте телефону!",
       );
     } finally {
       setIsLoading(false);
