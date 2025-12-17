@@ -9,7 +9,7 @@ export const Clients = () => {
       <div className={styles.container}>
         <h2 className={styles.title}>Среди наших клиентов</h2>
         <div className={styles.slider}>
-          <ImageCarousel images={CLIENTS_IMAGES} height={300} />
+          <ImageCarousel images={CLIENTS_IMAGES} height={300} width={300} />
         </div>
       </div>
     </div>

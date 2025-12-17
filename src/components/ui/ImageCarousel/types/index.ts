@@ -1,6 +1,7 @@
 export type ImageCarouselProps = {
   images: string[];
-  height: number;
+  height?: number;
+  width?: number;
   withIndicators?: boolean;
   loop?: boolean;
 };

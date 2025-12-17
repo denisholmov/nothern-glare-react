@@ -6,12 +6,15 @@ import type { ImageCarouselProps } from "./types";
 export const ImageCarousel = ({
   images,
   height = 300,
+  width = 300,
   withIndicators = true,
   loop = true,
 }: ImageCarouselProps) => {
   return (
     <Carousel
       height={height}
+      slideSize={`${width}px`} // slideSize должен быть здесь, у Carousel
+      slideGap="md"
       withIndicators={withIndicators}
       emblaOptions={{ loop }}
     >
@@ -20,7 +23,8 @@ export const ImageCarousel = ({
           <Image
             src={src}
             height={height}
-            fit="cover"
+            width={width}
+            fit="contain"
             alt={`Image ${index + 1}`}
           />
         </Carousel.Slide>
