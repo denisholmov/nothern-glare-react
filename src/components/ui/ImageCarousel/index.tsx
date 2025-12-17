@@ -5,7 +5,7 @@ import type { ImageCarouselProps } from "./types";
 
 export const ImageCarousel = ({
   images,
-  height,
+  height = 300,
   withIndicators = true,
   loop = true,
 }: ImageCarouselProps) => {
