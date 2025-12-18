@@ -18,7 +18,7 @@ export const Header: FC = () => {
               Работаем с 9:00 до 22:00
             </li>
             <li className={styles.item}>+7 (999) 581-98-22</li>
-            <li className={styles.item}>severnyblik@mail.ru</li>
+            <li className={styles.item}>severnyblik@gmail.com</li>
           </ul>
 
           <button
