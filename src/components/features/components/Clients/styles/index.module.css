@@ -5,8 +5,20 @@
   align-items: center;
   justify-content: space-between;
   max-width: 1685px;
-  padding: 50px 0;
+  padding: 50px;
   margin: 0 auto;
   background-color: var(--color-polar-bear-blizzard);
   border-radius: 21px;
+}
+
+.carousel {
+  width: 100%;
+}
+
+@media (width <= 440px) {
+  .container {
+    gap: 15px;
+    max-width: 380px;
+    padding: 14px 0;
+  }
 }
