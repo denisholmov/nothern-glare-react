@@ -9,8 +9,6 @@ import { LeftArrow } from "../icons/LeftArrow";
 import { RightArrow } from "../icons/RightArrow";
 import styles from "./styles/index.module.css";
 
-// ... остальные импорты
-
 export const ImageCarousel = ({
   images,
   height = 300,
@@ -19,7 +17,6 @@ export const ImageCarousel = ({
 }: ImageCarouselProps) => {
   const theme = useMantineTheme();
   const [slidesToShow, setSlidesToShow] = useState(1);
-  const [showControls, setShowControls] = useState(true);
 
   const isMobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const isTablet = useMediaQuery(`(max-width: ${theme.breakpoints.md})`);
@@ -33,20 +30,32 @@ export const ImageCarousel = ({
     } else {
       setSlidesToShow(3);
     }
+  }, [isMobile, isTablet, isDesktop]);
 
-    setShowControls(images.length > slidesToShow);
-  }, [images.length, isMobile, isTablet, isDesktop, slidesToShow]);
+  const showControls = images.length > slidesToShow;
 
   return (
     <Carousel
       withControls={showControls}
       slideGap="lg"
-      slideSize={{ base: "100%", sm: "50%", md: "33.333333%" }}
-      emblaOptions={{ loop }}
+      slideSize={{ base: "100%", sm: "50%", md: `${100 / slidesToShow}%` }}
+      emblaOptions={{
+        loop,
+        align: "start",
+        containScroll: "trimSnaps",
+      }}
       nextControlIcon={<RightArrow size={29} />}
       previousControlIcon={<LeftArrow size={29} />}
       classNames={{
         control: styles.control,
+      }}
+      styles={{
+        viewport: {
+          overflow: "visible",
+        },
+        container: {
+          gap: "var(--mantine-spacing-lg)",
+        },
       }}
     >
       {images.map((src, index) => (
