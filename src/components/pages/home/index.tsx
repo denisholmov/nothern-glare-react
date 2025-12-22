@@ -1,6 +1,7 @@
 import { Clients } from "@/components/features/components/Clients";
 
 import { Advantages } from "./components/Advantages";
+import { ExampleCleaning } from "./components/ExampleCleaning";
 import { Header } from "./components/Header";
 import { Process } from "./components/Process";
 import { Services } from "./components/Services";
@@ -16,6 +17,7 @@ export const HomePage = () => {
         <Process />
         <Advantages />
         <Clients />
+        <ExampleCleaning />
       </main>
     </div>
   );
