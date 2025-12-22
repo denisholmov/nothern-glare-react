@@ -48,7 +48,7 @@ body {
 html {
   position: relative;
   height: 100%;
-  overflow: hidden scroll;
+  overflow: hidden;
   font-size: 100%;
 }
 
