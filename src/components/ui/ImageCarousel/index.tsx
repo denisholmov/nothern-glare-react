@@ -51,7 +51,7 @@ export const ImageCarousel = ({
       }}
       styles={{
         viewport: {
-          overflow: "visible",
+          overflow: "hidden",
         },
         container: {
           gap: "var(--mantine-spacing-lg)",
