@@ -11,7 +11,7 @@ export const Header: FC = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <h1 className={styles.title}>Северный блик</h1>
-
+        {/* shdzhdshsah */}
         <div className={styles.information}>
           <ul className={styles.list}>
             <li className={`${styles.item} ${styles.itemSteel}`}>
