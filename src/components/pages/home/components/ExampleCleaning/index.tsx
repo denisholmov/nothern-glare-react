@@ -7,7 +7,7 @@ export const ExampleCleaning = () => {
   return (
     <div className={styles.example}>
       <div className={styles.container}>
-        <h2 className={styles.title}>До и после уборки</h2>
+        <h2 className={styles.title}>Примеры работ</h2>
         <div className={styles.carousel}>
           <ImageCarousel images={EXAMPLES_IMAGES} height={428} width={321} />
         </div>

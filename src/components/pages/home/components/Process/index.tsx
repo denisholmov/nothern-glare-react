@@ -10,7 +10,7 @@ export const Process: FC = () => {
           <img src="/images/bg-process.jpg" alt="Окно" />
         </div>
         <div className={styles.stages}>
-          <img src="/images/window.jpg" alt="Как выполняется мойка окон" />
+          <img src="/images/window.jpg" alt="Что входит в услугу" />
         </div>
       </div>
     </section>

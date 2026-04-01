@@ -1,4 +1,5 @@
 import { Clients } from "@/components/features/components/Clients";
+import { Footer } from "@/components/features/Footer";
 
 import { Advantages } from "./components/Advantages";
 import { ExampleCleaning } from "./components/ExampleCleaning";
@@ -19,6 +20,8 @@ export const HomePage = () => {
         <Clients />
         <ExampleCleaning />
       </main>
+
+      <Footer />
     </div>
   );
 };
