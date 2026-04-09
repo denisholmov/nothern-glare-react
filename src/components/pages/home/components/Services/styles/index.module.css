@@ -22,17 +22,28 @@
   color: var(--color-lead);
 }
 
-@media (width <= 440px) {
+@media (width <= 768px) {
+  .container {
+    gap: 20px;
+    padding: 20px 16px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+}
+
+@media (width <= 480px) {
   .services {
     margin-bottom: 20px;
   }
 
   .container {
-    gap: 19px;
-    max-width: 383px;
+    gap: 16px;
+    padding: 16px 12px;
   }
 
   .title {
-    font-size: 9px;
+    font-size: 18px;
   }
 }
