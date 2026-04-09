@@ -8,14 +8,14 @@ export const Footer = () => {
           <h3 className={styles.title}>Северный блик</h3>
 
           <div className={styles.contacts}>
-            <span>+7 (999) 999-99-99</span>
-            <span>severnyblik@mail.ru</span>
+            <span>+7 (999) 581-98-22</span>
+            {/* <span>severnyblik@mail.ru</span> */}
           </div>
 
           <div className={styles.meta}>
-            <p>© ООО «Северный блик» 2025</p>{" "}
-            <p>ИНН 9999999999, ОГРН 9999999999999</p>
-            <p>197101, город Санкт-Петербург, ул. Мира д. 3</p>
+            {/* <p>© ООО «Северный блик» 2025</p>{" "} */}
+            {/* <p>ИНН 9999999999, ОГРН 9999999999999</p> */}
+            {/* <p>197101, город Санкт-Петербург, ул. Мира д. 3</p> */}
           </div>
         </div>
 
@@ -24,7 +24,7 @@ export const Footer = () => {
 
           <div className={styles.socials}>
             <a
-              href="https://t.me/your_channel"
+              href="https://t.me/vladislav_ov_v"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
@@ -34,7 +34,7 @@ export const Footer = () => {
             </a>
 
             <a
-              href="https://vk.com/your_page"
+              href="https://vk.com/ghostvood"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="VK"

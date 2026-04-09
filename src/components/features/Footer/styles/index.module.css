@@ -10,6 +10,7 @@
   gap: 40px;
   justify-content: space-between;
   max-width: 1200px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
@@ -60,4 +61,33 @@
   text-decoration: none;
   background: #2f80ed;
   border-radius: 50%;
+}
+
+@media (width <= 768px) {
+  .container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .left {
+    max-width: 100%;
+  }
+
+  .right {
+    text-align: left;
+  }
+
+  .socials {
+    justify-content: flex-start;
+  }
+}
+
+@media (width <= 480px) {
+  .footer {
+    padding: 28px 0;
+  }
+
+  .title {
+    font-size: 20px;
+  }
 }

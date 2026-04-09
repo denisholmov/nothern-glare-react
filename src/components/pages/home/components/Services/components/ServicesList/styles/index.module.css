@@ -18,6 +18,7 @@
 .text {
   font-size: 20px;
   font-weight: 400;
+  text-align: center;
 }
 
 .image {
@@ -33,21 +34,36 @@
   max-height: 100%;
 }
 
-@media (width <= 440px) {
-  .container {
-    max-width: 383px;
+@media (width <= 768px) {
+  .list {
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
   }
 
   .item {
-    gap: 4px;
+    flex: 1 1 calc(33% - 16px);
+    gap: 10px;
+    min-width: 100px;
   }
 
   .text {
-    font-size: 8px;
+    font-size: 16px;
+  }
+}
+
+@media (width <= 480px) {
+  .item {
+    flex: 1 1 calc(50% - 12px);
+    gap: 8px;
+  }
+
+  .text {
+    font-size: 13px;
   }
 
   .image {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
   }
 }
